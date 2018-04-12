@@ -11,17 +11,17 @@ package Modelos;
  */
 public class Casino {
 
-    private final Jugador[] jugadores;
-    private int posicion;
-    private final int nElementos;
+    private final Jugador[] jugadores;//Se Define un Vector de objecto tipo clase cuenta
+    private int posicion=0;//para saber hasta dodne se lleno el vector
+    private final int nElementos;//numero de elementos del vector
 
-    int sw;
+    int sw=0;
 
+    
     //metodos CONSTRUCTOR
     public Casino() {
-        jugadores = new Jugador[4];
-        posicion = 0;
-        nElementos = jugadores.length;
+        nElementos = 4;
+        jugadores = new Jugador[nElementos];  
     }
 
     public boolean estaVacio() {
@@ -38,8 +38,7 @@ public class Casino {
             sw = 1;
         } else {
             jugadores[posicion] = objecto;
-            posicion += 1;
-            sw = 0;
+            posicion++;
         }
     }
 

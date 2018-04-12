@@ -39,17 +39,18 @@ public class servletJugadores extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            Jugador jugador = new Jugador();
+            Jugador jugador;
             Casino objC;
 
             //Capturamos los datos del Jugador
-            jugador.setNombre(request.getParameter("txtNombre1"));
-            jugador.setValorApostar(Double.parseDouble(request.getParameter("txtVr1")));
-            jugador.setNumeroApostar(Integer.parseInt(request.getParameter("txtNum1")));
+            String nombre = request.getParameter("txtNombre1");
+            double valorApostar = Double.parseDouble(request.getParameter("txtVr1"));
+            int numApostado = Integer.parseInt(request.getParameter("txtNum1"));
+            jugador = new Jugador(nombre, valorApostar, numApostado);
 
             if (jugador.validarVrApostar() && jugador.validarNumero()) {
                 objC = new Casino();
-
+                
                 if (objC.numeroJugadores() < 4 && objC.validarDatos() == true) {
                     objC.insertarJugador(jugador);
                     out.println("<h1>Se Creo el Jugador </h1>");
