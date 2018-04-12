@@ -33,125 +33,34 @@
             </nav>
             <br><br>   
             <form action="servletJugadores" method="post">
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="card text-dark bg-light  mb-3" style="max-width: 18rem;">
-                            <h5 class="card-header bg-primary">JUGADOR #1</h5>
-                            <div class="card-body">
-                                <img class="card-img-top" src="images/img5.png" alt="Card image cap">
-                                <h5 class="card-title">Datos del Primer Jugador</h5>
-                                <p class="card-text">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Nombre</label>
-                                    <input type="text" name="txtNombre1"  class="form-control"  
-                                           placeholder="Ingrese Nombre" required="Ingrese su nombre">                                    
-                                </div>                               
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Valor aportar: </label>
-                                    <input type="number" name="txtVr1"  class="form-control"  
-                                           placeholder="Ingrese Valor apostar" required="Ingrese el valor apostar">                                    
-                                </div>                               
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Numero que va aportar</label>
-                                    <input type="number" name="txtNum1"  class="form-control"   
-                                           placeholder="Ingrese Numero apostar" required="Ingrese numero apostar">                                    
-                                </div>
-
-                                </p>
-                                <center><input type="submit" name="btnEnviar" value="Iniciar" 
-                                               class="btn btn-primary"></center>
-                            </div>
+                <div class="card text-dark bg-light  mb-3" style="max-width: 18rem;">
+                    <h5 class="card-header bg-primary">DATOS DE JUGADOR</h5>
+                    <div class="card-body">
+                        <img class="card-img-top" src="images/img5.png" alt="Card image cap">
+                        <h5 class="card-title">Datos del Primer Jugador</h5>
+                        <p class="card-text">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Ingrese Nombre</label>
+                            <input type="text" name="txtNombre1"  class="form-control"  
+                                   placeholder="Ingrese Nombre" required>                                    
+                        </div>                               
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Ingrese Valor aportar: </label>
+                            <input type="number" name="txtVr1"  class="form-control"  
+                                   placeholder="Ingrese Valor apostar" required>                                    
+                        </div>                               
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Ingrese Numero que va aportar</label>
+                            <input type="number" name="txtNum1"  class="form-control"   
+                                   placeholder="Ingrese Numero apostar" required>                                    
                         </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card text-dark bg-light  mb-3" style="max-width: 18rem;">
-                            <h5 class="card-header bg-primary">JUGADOR #2</h5>
-                            <div class="card-body">
-                                <img class="card-img-top" src="images/img10.png" alt="Card image cap">
-                                <h5 class="card-title">Datos del Segundo Jugador</h5>
-                                <p class="card-text">
-                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Nombre</label>
-                                    <input type="text" name="txtNombre2"  class="form-control"  
-                                           placeholder="Ingrese Nombre" required="Ingrese su nombre">                                    
-                                </div>                               
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Valor aportar: </label>
-                                    <input type="number" name="txtVr2"  class="form-control"  
-                                           placeholder="Ingrese Valor apostar" required="Ingrese el valor apostar">                                    
-                                </div>                               
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Numero que va aportar</label>
-                                    <input type="number" name="txtNum2"  class="form-control"   
-                                           placeholder="Ingrese Numero apostar" required="Ingrese numero apostar">                                    
-                                </div>
 
-                                </p>
-                                <center><input type="submit" name="btnEnviar" value="Iniciar" 
-                                               class="btn btn-primary"></center>
-                            </div>
-                        </div>
+                        </p>
+                        <center><input type="submit" name="btnEnviar" value="Iniciar" 
+                                       class="btn btn-primary"></center>
                     </div>
-                    <div class="col-sm">
-                        <div class="card text-dark bg-light  mb-3" style="max-width: 18rem;">
-                            <h5 class="card-header bg-primary">JUGADOR #3</h5>
-                            <div class="card-body">
-                                <img class="card-img-top" src="images/img7.png" alt="Card image cap">
-                                <h5 class="card-title">Datos del Tercer Jugador</h5>
-                                <p class="card-text">
-                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Nombre</label>
-                                    <input type="text" name="txtNombre3"  class="form-control"  
-                                           placeholder="Ingrese Nombre" required="Ingrese su nombre">                                    
-                                </div>                               
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Valor aportar: </label>
-                                    <input type="number" name="txtVr3"  class="form-control"  
-                                           placeholder="Ingrese Valor apostar" required="Ingrese el valor apostar">                                    
-                                </div>                               
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Numero que va aportar</label>
-                                    <input type="number" name="txtNum3"  class="form-control"   
-                                           placeholder="Ingrese Numero apostar" required="Ingrese numero apostar">                                    
-                                </div>
-
-                                </p>
-                                <center><input type="submit" name="btnEnviar" value="Iniciar" 
-                                               class="btn btn-primary"></center>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card text-dark bg-light  mb-3" style="max-width: 18rem;">
-                            <h5 class="card-header bg-primary">JUGADOR #4</h5>
-                            <div class="card-body">
-                                <img class="card-img-top" src="images/img4.png" alt="Card image cap">
-                                <h5 class="card-title">Datos del Cuarto Jugador</h5>
-                                <p class="card-text">
-                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Nombre</label>
-                                    <input type="text" name="txtNombre4"  class="form-control"  
-                                           placeholder="Ingrese Nombre" required="Ingrese su nombre">                                    
-                                </div>                               
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Valor aportar: </label>
-                                    <input type="number" name="txtVr4"  class="form-control"  
-                                           placeholder="Ingrese Valor apostar" required="Ingrese el valor apostar">                                    
-                                </div>                               
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Ingrese Numero que va aportar</label>
-                                    <input type="number" name="txtNum4"  class="form-control"   
-                                           placeholder="Ingrese Numero apostar" required="Ingrese numero apostar">                                    
-                                </div>
-
-                                </p>
-                                <center><input type="submit" name="btnEnviar" value="Iniciar" 
-                                               class="btn btn-primary"></center>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
 
             </form>
 

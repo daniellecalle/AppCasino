@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Modelos.*;
+import java.util.Arrays;
 
 /**
  *
@@ -37,30 +38,40 @@ public class servletJugadores extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            Jugador jugador1 = new Jugador();
-            Jugador jugador2 = new Jugador();
-            Jugador jugador3 = new Jugador();
-            Jugador jugador4 = new Jugador();
+            Jugador jugador = new Jugador();
+            Casino objC;
 
-            //Capturamos los datos del primer Jugador
-            jugador1.setNombre(request.getParameter("txtNombre1"));
-            jugador1.setValorApostar(Double.parseDouble(request.getParameter("txtVr1")));
-            jugador1.setNumeroApostar(Integer.parseInt(request.getParameter("txtNum1")));
+            int pos = 0;
 
-            //Capturamos los datos del Segundo jugador
-            jugador2.setNombre(request.getParameter("txtNombre2"));
-            jugador2.setValorApostar(Double.parseDouble(request.getParameter("txtVr2")));
-            jugador2.setNumeroApostar(Integer.parseInt(request.getParameter("txtNum2")));
+            //Capturamos los datos del Jugador
+            jugador.setNombre(request.getParameter("txtNombre1"));
+            jugador.setValorApostar(Double.parseDouble(request.getParameter("txtVr1")));
+            jugador.setNumeroApostar(Integer.parseInt(request.getParameter("txtNum1")));
 
-            //Capturamos los datos del Tercer Jugador
-            jugador3.setNombre(request.getParameter("txtNombre3"));
-            jugador3.setValorApostar(Double.parseDouble(request.getParameter("txtVr3")));
-            jugador3.setNumeroApostar(Integer.parseInt(request.getParameter("txtNum3")));
+            if (jugador.validarVrApostar() && jugador.validarNumero()) {
+                objC = new Casino();
 
-            //Capturamos los datos del Cuarto Jugador
-            jugador4.setNombre(request.getParameter("txtNombre4"));
-            jugador4.setValorApostar(Double.parseDouble(request.getParameter("txtVr4")));
-            jugador4.setNumeroApostar(Integer.parseInt(request.getParameter("txtNum4")));
+                if (objC.numeroJugadores() < 4 || objC.validarDatos() == true) {
+                    out.println("<h2>Jugadores ya Fueron ingresados correctamente!!!</h2>");
+                    out.println("<br>");
+                    out.println("<a href=Juego.jsp>Ingresar Otro Jugador</a>");
+                } else {
+                    objC.insertarJugador(jugador);
+
+                    for (int i = 0; i < objC.vJugadores().length; i++) {
+                        pos = i;
+                    }
+
+                    out.println("<h1>Se Creo el Jugador N° " + pos + "</h1>");
+                    out.println("<br>");
+                    out.println("<a href=Juego.jsp>Ingresar Otro Jugador</a>");
+
+                }
+
+            } else {
+                out.println("<h1>Ingrese por Favor lo siguiente</h1>");
+                out.println("<p>el Valor Apostar mayor o igual 10.000$ y numero apostar entre 0 y 10</p>");
+            }
 
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -68,9 +79,6 @@ public class servletJugadores extends HttpServlet {
             out.println("<title>Servlet servletJugadores</title>");
             out.println("</head>");
             out.println("<body>");
-            
-            
-            
 
         } catch (NumberFormatException ex) {
             out.println("<h1>Error: " + ex.toString() + "</h1>");

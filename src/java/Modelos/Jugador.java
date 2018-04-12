@@ -10,7 +10,7 @@ package Modelos;
  * @author daniel
  */
 public class Jugador {
-    
+
     private String nombre;
     private double valorApostar;
     private int numeroApostar;
@@ -66,6 +66,15 @@ public class Jugador {
     public void setNumeroApostar(int numeroApostar) {
         this.numeroApostar = numeroApostar;
     }
+
+    public boolean validarVrApostar() {
+        return (valorApostar >= 10000);
+    }
+
+    public boolean validarNumero() {
+        return (numeroApostar >= 0 && numeroApostar <= 10);
+    }
     
     
+
 }

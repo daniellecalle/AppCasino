@@ -11,38 +11,46 @@ package Modelos;
  */
 public class Casino {
 
-    private Jugador[] jugadores;
-    private int nElementos;
+    private final Jugador[] jugadores;
     private int posicion;
+    private final int nElementos;
 
     int sw = 0;
-    
+
     //metodos CONSTRUCTOR
     public Casino() {
+        jugadores = new Jugador[4];
+        posicion = 0;
+        nElementos = 4;
     }
 
-    public Casino(int tam) {
-        jugadores = new Jugador[tam];
-        nElementos = tam;
-        posicion = 0;
-    }
-    
-    public boolean estaVacio(){       
+    public boolean estaVacio() {
         return posicion == 0;
     }
-    
-    public boolean estaLleno(){
-        return posicion>=nElementos;
+
+    public boolean estaLleno() {
+        return !(posicion >= nElementos);
+    }
+
+    public void insertarJugador(Jugador objecto) {
+
+        if (estaLleno()) {
+            jugadores[posicion] = objecto;
+            posicion+=1;
+        } else {
+            sw = 1;
+        }
     }
     
-    public int  insertarJugador(Jugador objJ){
-        
-        if(estaLleno()){
-            sw = 1;
-        }else{
-            jugadores[posicion] = objJ;
-        }
-      
-        return sw;
+    public boolean validarDatos(){      
+        return sw != 1;         
+    }
+    
+    public int numeroJugadores(){
+        return posicion;
+    }
+    
+    public Jugador[] vJugadores(){
+        return jugadores;
     }
 }
