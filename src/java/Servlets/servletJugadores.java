@@ -33,6 +33,7 @@ public class servletJugadores extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
 
         PrintWriter out = response.getWriter();
@@ -40,8 +41,6 @@ public class servletJugadores extends HttpServlet {
         try {
             Jugador jugador = new Jugador();
             Casino objC;
-
-            int pos = 0;
 
             //Capturamos los datos del Jugador
             jugador.setNombre(request.getParameter("txtNombre1"));
@@ -51,21 +50,15 @@ public class servletJugadores extends HttpServlet {
             if (jugador.validarVrApostar() && jugador.validarNumero()) {
                 objC = new Casino();
 
-                if (objC.numeroJugadores() < 4 || objC.validarDatos() == true) {
-                    out.println("<h2>Jugadores ya Fueron ingresados correctamente!!!</h2>");
+                if (objC.numeroJugadores() < 4 && objC.validarDatos() == true) {
+                    objC.insertarJugador(jugador);
+                    out.println("<h1>Se Creo el Jugador </h1>");
                     out.println("<br>");
                     out.println("<a href=Juego.jsp>Ingresar Otro Jugador</a>");
                 } else {
-                    objC.insertarJugador(jugador);
-
-                    for (int i = 0; i < objC.vJugadores().length; i++) {
-                        pos = i;
-                    }
-
-                    out.println("<h1>Se Creo el Jugador N° " + pos + "</h1>");
+                    out.println("<h2>Jugadores ya Fueron ingresados correctamente!!!</h2>");
                     out.println("<br>");
                     out.println("<a href=Juego.jsp>Ingresar Otro Jugador</a>");
-
                 }
 
             } else {

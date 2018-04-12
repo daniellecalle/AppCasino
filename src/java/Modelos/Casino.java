@@ -15,13 +15,13 @@ public class Casino {
     private int posicion;
     private final int nElementos;
 
-    int sw = 0;
+    int sw;
 
     //metodos CONSTRUCTOR
     public Casino() {
         jugadores = new Jugador[4];
         posicion = 0;
-        nElementos = 4;
+        nElementos = jugadores.length;
     }
 
     public boolean estaVacio() {
@@ -29,28 +29,30 @@ public class Casino {
     }
 
     public boolean estaLleno() {
-        return !(posicion >= nElementos);
+        return posicion >= nElementos;
     }
 
     public void insertarJugador(Jugador objecto) {
 
         if (estaLleno()) {
-            jugadores[posicion] = objecto;
-            posicion+=1;
-        } else {
             sw = 1;
+        } else {
+            jugadores[posicion] = objecto;
+            posicion += 1;
+            sw = 0;
         }
     }
-    
-    public boolean validarDatos(){      
-        return sw != 1;         
+
+    public boolean validarDatos() {
+        return sw != 1;
     }
-    
-    public int numeroJugadores(){
+
+    public int numeroJugadores() {
         return posicion;
     }
-    
-    public Jugador[] vJugadores(){
+
+    public Jugador[] vJugadores() {
         return jugadores;
     }
+
 }
