@@ -11,11 +11,11 @@ package Modelos;
  */
 public class Casino {
 
-    private final Jugador[] jugadores;//Se Define un Vector de objecto tipo clase cuenta
+    static private Jugador[] jugadores;//Se Define un Vector de objecto tipo clase cuenta
     private int posicion=0;//para saber hasta dodne se lleno el vector
-    private final int nElementos;//numero de elementos del vector
+    static private int nElementos;//numero de elementos del vector
 
-    int sw=0;
+    int sw = 0;
 
     
     //metodos CONSTRUCTOR
