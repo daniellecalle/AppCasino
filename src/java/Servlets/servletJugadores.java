@@ -50,12 +50,30 @@ public class servletJugadores extends HttpServlet {
 
             if (jugador.validarVrApostar() && jugador.validarNumero()) {
                 objC = new Casino();
-                
-                if (objC.numeroJugadores() < 4 && objC.validarDatos() == true) {
+
+                if (objC.numeroJugadores() < 4 && objC.validarDatos()) {
                     objC.insertarJugador(jugador);
-                    out.println("<h1>Se Creo el Jugador </h1>");
+                    out.println("<h1>Se Creo el Jugador N° " + (objC.numeroJugadores() + 1) + "</h1>");
                     out.println("<br>");
+
+                    int i = 0;
+
+                    while (i < objC.vJugadores().length) {
+                        out.println("<h1>Jugador N° " + (i + 1) + "</h2>");
+                        out.println("<br>");
+                        out.println("<p>Nombre: "
+                                + objC.vJugadores()[i].getNombre() + "</p>");
+                        out.println("<br>");
+                        out.println("<p>Valor Apostado: "
+                                + objC.vJugadores()[i].getNumeroApostar() + "</p>");
+                        out.println("<br>");
+                        out.println("<p>Numero Apostado: "
+                                + objC.vJugadores()[i].getNumeroApostar() + "</p>");
+                        i++;
+                    }
+
                     out.println("<a href=Juego.jsp>Ingresar Otro Jugador</a>");
+
                 } else {
                     out.println("<h2>Jugadores ya Fueron ingresados correctamente!!!</h2>");
                     out.println("<br>");
@@ -76,6 +94,8 @@ public class servletJugadores extends HttpServlet {
 
         } catch (NumberFormatException ex) {
             out.println("<h1>Error: " + ex.toString() + "</h1>");
+        } catch (Exception ex) {
+            out.println(ex.toString());
         }
         out.println("</body>");
         out.println("</html>");
