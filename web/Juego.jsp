@@ -38,7 +38,7 @@
                         <div class="card text-dark bg-light  mb-8" style="max-width: 24rem;">
                             <h5 class="card-header card text-white bg-dark ">DATOS DE JUGADOR #1</h5>
                             <div class="card-body">
-                                <img class="card-img-top" src="images/img10.png" alt="Card image cap">
+                                <img class="card-img-top" src="images/img7.png" alt="Card image cap">
                                 <!--<h5 class="card-title">Datos del Primer Jugador</h5>-->
                                 <p class="card-text">
 
@@ -70,7 +70,7 @@
                         <div class="card text-dark bg-light  mb-8" style="max-width: 24rem;">
                             <h5 class="card-header card text-white bg-dark ">DATOS DE JUGADOR #2</h5>
                             <div class="card-body">
-                                <img class="card-img-top" src="images/img10.png" alt="Card image cap">
+                                <img class="card-img-top" src="images/img7.png" alt="Card image cap">
                                 <!--<h5 class="card-title">Datos del Primer Jugador</h5>-->
                                 <p class="card-text">
 
@@ -103,7 +103,7 @@
                         <div class="card text-dark bg-light  mb-8" style="max-width: 24rem;">
                             <h5 class="card-header card text-white bg-dark ">DATOS DE JUGADOR #3</h5>
                             <div class="card-body">
-                                <img class="card-img-top" src="images/img10.png" alt="Card image cap">
+                                <img class="card-img-top" src="images/img7.png" alt="Card image cap">
                                 <!--<h5 class="card-title">Datos del Primer Jugador</h5>-->
                                 <p class="card-text">
 
@@ -135,7 +135,7 @@
                         <div class="card text-dark bg-light  mb-8" style="max-width: 24rem;">
                             <h5 class="card-header card text-white bg-dark ">DATOS DE JUGADOR #4</h5>
                             <div class="card-body">
-                                <img class="card-img-top" src="images/img10.png" alt="Card image cap">
+                                <img class="card-img-top" src="images/img7.png" alt="Card image cap">
                                 <!--<h5 class="card-title">Datos del Primer Jugador</h5>-->
                                 <p class="card-text">
 

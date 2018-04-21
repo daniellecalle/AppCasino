@@ -260,15 +260,14 @@ public class Jugador {
         this.saldo4 = saldo4;
     }
 
-    public boolean Validar1() {
+    /*public boolean Validar1() {
 
         return ((numApostado1 >= 0 && numApostado1 <= 10) && (numApostado2 >= 0 && numApostado2 <= 10)
                 && (numApostado3 >= 0 && numApostado3 <= 10) && (numApostado4 >= 0 && numApostado4 <= 10));
     }
-
     public boolean Validar2() {
         return ((vrApostado1 <= saldo1) && (vrApostado2 <= saldo2) && (vrApostado3 <= saldo3) && (vrApostado4 <= saldo4));
-    }
+    }*/
 
     public double ganador1() {
 

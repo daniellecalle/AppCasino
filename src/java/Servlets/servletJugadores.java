@@ -54,18 +54,19 @@ public class servletJugadores extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<div class=\"container\">");
-            out.println("<h1>JUEGO DE RULETA<h1>");
+            out.println("<center><h1>JUEGO DE RULETA<h1></center>");
 
             Jugador objJ = new Jugador();
             objJ.Random();
             objJ.getRandom();
 
             //capturamos los nombres de los jugadores
-            nom1 = request.getParameter("txtNombre1");
-            nom2 = request.getParameter("txtNombre2");
-            nom3 = request.getParameter("txtNombre3");
-            nom4 = request.getParameter("txtNombre4");
-
+            objJ.setNom1(request.getParameter("txtNombre1"));
+            objJ.setNom2(request.getParameter("txtNombre2"));
+            objJ.setNom3(request.getParameter("txtNombre3"));
+            objJ.setNom4(request.getParameter("txtNombre4"));
+            
+            //Capturamos la Informacion de Valores apostados
             vrapuesta1 = Double.parseDouble(request.getParameter("txtValor1"));
             vrapuesta2 = Double.parseDouble(request.getParameter("txtValor2"));
             vrapuesta3 = Double.parseDouble(request.getParameter("txtValor3"));
@@ -88,9 +89,7 @@ public class servletJugadores extends HttpServlet {
                 objJ.setNumApostado1(0);
                 objJ.setVrApostado1(0);
             } else {
-
-                objJ.setNom1(nom1);
-
+                
                 if (vrapuesta1 <= saldo1) {
                     objJ.setVrApostado1(vrapuesta1);
                     objJ.setSaldo1(saldo1);
@@ -166,8 +165,7 @@ public class servletJugadores extends HttpServlet {
                 objJ.setNumApostado2(0);
                 objJ.setVrApostado2(0);
             } else {
-                objJ.setNom2(nom2);
-
+                
                 if (vrapuesta2 <= saldo2) {
                     objJ.setVrApostado2(vrapuesta2);
                     objJ.setSaldo2(saldo2);
@@ -243,8 +241,7 @@ public class servletJugadores extends HttpServlet {
                 objJ.setNumApostado3(0);
                 objJ.setVrApostado3(0);
             } else {
-                objJ.setNom3(nom3);
-
+                
                 if (vrapuesta3 <= saldo3) {
                     objJ.setVrApostado3(vrapuesta3);
                     objJ.setSaldo3(saldo3);
@@ -295,21 +292,21 @@ public class servletJugadores extends HttpServlet {
                     out.println("</div>");
                     out.println("<div class=\"card-body\">");
                     out.println("<h2 class=\"card-title\">El Jugador: " + objJ.getNom3()
-                            + "Fue Ganador con el Numero: " + objJ.getRandom() + "</h2>");
+                            + " Fue Ganador con el Numero: " + objJ.getRandom() + "</h2>");
                     out.println("<br>");
                     out.println("<h1>Nuevo Saldo: </h1>");
                     out.println("<p>El Jugador 1: " + objJ.getNom1()
-                            + "Su Nuevo Saldo es: " + (saldo1 - vrapuesta1) + "</p>");
+                            + " Su Nuevo Saldo es: " + (saldo1 - vrapuesta1) + "</p>");
                     out.println("<p>El Jugador 2: " + objJ.getNom2()
-                            + "Su Nuevo Saldo es: " + (saldo2 - vrapuesta2) + "</p>");
+                            + " Su Nuevo Saldo es: " + (saldo2 - vrapuesta2) + "</p>");
                     out.println("<p>El Jugador 3: " + objJ.getNom3()
-                            + "Su Nuevo Saldo es: " + (vrapuesta3 + saldo3) + "</p>");
+                            + " Su Nuevo Saldo es: " + (vrapuesta3 + saldo3) + "</p>");
                     out.println("<p>El Jugador 4: " + objJ.getNom4()
-                            + "Su Nuevo Saldo es: " + (saldo4 - vrapuesta4) + "</p>");
+                            + " Su Nuevo Saldo es: " + (saldo4 - vrapuesta4) + "</p>");
 
                     out.println("<br>");
 
-                    out.println("<a href=\"index.jsp\" class=\"btn btn-successs\">Jugar de Nuevo</a>");
+                    out.println("<a href=\"index.jsp\" class=\"btn btn-success\">Jugar de Nuevo</a>");
                     out.println("</div>");
                     out.println("</div>");
                 }
@@ -321,9 +318,7 @@ public class servletJugadores extends HttpServlet {
                 objJ.setVrApostado4(0);
             } else {
 
-                objJ.setNom4(nom4);
-
-                if (vrapuesta4 <= 10) {
+                if (vrapuesta4 <= saldo4) {
                     objJ.setVrApostado4(vrapuesta4);
                     objJ.setSaldo4(saldo4);
                 } else {
@@ -338,7 +333,7 @@ public class servletJugadores extends HttpServlet {
                     out.println("<h5 class=\"card-title\"><b>Ingrese por Favor lo siguiente...</b></h5>");
                     out.println("<p class=\"card-text\">El Valor Apostado Supera el Saldo Actual</p>");
                     out.println("<a href=\"Juego.jsp\" class=\"btn btn-success\" class=\"card-link\">Atras</a> | ");
-                    out.println("<a href=\"index.jsp\" class=\"btn btn-info\" class=\"card-link\">Volver Al inicio</a>");
+                    out.println("<a href=\"index.jsp\" class=\"btn btn-success\" class=\"card-link\">Volver Al inicio</a>");
                     out.println("</div>");
                     out.println("</div>");
                     out.println("</center>");
@@ -359,7 +354,7 @@ public class servletJugadores extends HttpServlet {
                     out.println("<h5 class=\"card-title\"><b>Ingrese por Favor lo siguiente...</b></h5>");
                     out.println("<p class=\"card-text\">El Numero a apostar debe estar en el Rango del 0 al 10.</p>");
                     out.println("<a href=\"Juego.jsp\" class=\"btn btn-success\" class=\"card-link\">Atras</a> | ");
-                    out.println("<a href=\"index.jsp\" class=\"btn btn-info\" class=\"card-link\">Volver Al inicio</a>");
+                    out.println("<a href=\"index.jsp\" class=\"btn btn-success\" class=\"card-link\">Volver Al inicio</a>");
                     out.println("</div>");
                     out.println("</div>");
                     out.println("</center>");
@@ -373,21 +368,21 @@ public class servletJugadores extends HttpServlet {
                     out.println("</div>");
                     out.println("<div class=\"card-body\">");
                     out.println("<h2 class=\"card-title\">El Jugador: " + objJ.getNom4()
-                            + "Fue Ganador con el Numero: " + objJ.getRandom() + "</h2>");
+                            + " Fue Ganador con el Numero: " + objJ.getRandom() + "</h2>");
                     out.println("<br>");
                     out.println("<h1>Nuevo Saldo: </h1>");
                     out.println("<p>El Jugador 1: " + objJ.getNom1()
-                            + "Su Nuevo Saldo es: " + (saldo1 - vrapuesta1) + "</p>");
+                            + " Su Nuevo Saldo es: " + (saldo1 - vrapuesta1) + "</p>");
                     out.println("<p>El Jugador 2: " + objJ.getNom2()
-                            + "Su Nuevo Saldo es: " + (saldo2 - vrapuesta2) + "</p>");
+                            + " Su Nuevo Saldo es: " + (saldo2 - vrapuesta2) + "</p>");
                     out.println("<p>El Jugador 3: " + objJ.getNom3()
-                            + "Su Nuevo Saldo es: " + (saldo3 - vrapuesta3) + "</p>");
+                            + " Su Nuevo Saldo es: " + (saldo3 - vrapuesta3) + "</p>");
                     out.println("<p>El Jugador 4: " + objJ.getNom4()
-                            + "Su Nuevo Saldo es: " + (vrapuesta4 + saldo4) + "</p>");
+                            + " Su Nuevo Saldo es: " + (saldo4 - vrapuesta4) + "</p>");
 
                     out.println("<br>");
 
-                    out.println("<a href=\"index.jsp\" class=\"btn btn-successs\">Jugar de Nuevo</a>");
+                    out.println("<a href=\"index.jsp\" class=\"btn btn-success\">Jugar de Nuevo</a>");
                     out.println("</div>");
                     out.println("</div>");
                 }
@@ -403,17 +398,17 @@ public class servletJugadores extends HttpServlet {
                 out.println("<br>");
                 out.println("<h1>Nuevo Saldo: </h1>");
                 out.println("<p>El Jugador 1: " + objJ.getNom1()
-                        + "Su Nuevo Saldo es: " + (saldo1 - vrapuesta1) + "</p>");
+                        + " Su Nuevo Saldo es: " + (saldo1 - vrapuesta1) + "</p>");
                 out.println("<p>El Jugador 2: " + objJ.getNom2()
-                        + "Su Nuevo Saldo es: " + (saldo2 - vrapuesta2) + "</p>");
+                        + " Su Nuevo Saldo es: " + (saldo2 - vrapuesta2) + "</p>");
                 out.println("<p>El Jugador 3: " + objJ.getNom3()
-                        + "Su Nuevo Saldo es: " + (saldo3 - vrapuesta3) + "</p>");
+                        + " Su Nuevo Saldo es: " + (saldo3 - vrapuesta3) + "</p>");
                 out.println("<p>El Jugador 4: " + objJ.getNom4()
-                        + "Su Nuevo Saldo es: " + (vrapuesta4 - saldo4) + "</p>");
+                        + " Su Nuevo Saldo es: " + (saldo4 - vrapuesta4) + "</p>");
 
                 out.println("<br>");
 
-                out.println("<a href=\"index.jsp\" class=\"btn btn-successs\">Jugar de Nuevo</a>");
+                out.println("<a href=\"index.jsp\" class=\"btn btn-success\">Jugar de Nuevo</a>");
                 out.println("</div>");
                 out.println("</div>");
             }
