@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelos;
+package Clases;
 
 /**
  *
  * @author daniel
  */
+
 public class Casino {
 
     static private Jugador[] jugadores;//Se Define un Vector de objecto tipo clase cuenta

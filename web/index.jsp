@@ -36,17 +36,57 @@
             </nav>
 
             <div class="jumbotron">
-                <h1 class="display-4">Bienvenido al Juego!!!</h1>
-                <p class="lead">Le Damos La Cordial Bienvenida en participar de este nuestro casino. Mucha Suerte!</p>
+                <h1 class="display-4">Bienvenido al Juego de Ruleta</h1>
+                <p class="lead">Ingrese Los Nombres de los Jugadores Para Empezar a Jugar</p>
                 <hr class="my-4">
                 <p>
                 <center>
-                    <img class="img-fluid" alt="Responsive image" src="images/img9.png">
-                </center>      
+                <form method="post" action="Juego.jsp">
+                    <div class="row">
+                        <div class="col col-4">
+                            <b><label>Jugador 1: </label></b>
+                        </div>
+                        <div class="col col-4">
+                            <input type="text" name="txtNombre1" class="form-control"
+                                   required="Ingrese Por Favor El nombre Jugador 1"><br>
+                        </div>
+                        <div class="w-100"></div>
+
+                        <div class="col col-4">
+                            <b><label>Jugador 2: </label></b>
+                        </div>
+                        <div class="col col-4">
+                            <input type="text" name="txtNombre2" class="form-control"
+                                   required="Ingrese Por Favor El nombre Jugador 2"><br>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col col-4">
+                            <b><label>Jugador 3: </label></b>
+                        </div>
+                        <div class="col col-4">
+                            <input type="text" name="txtNombre3" class="form-control" required="Ingrese Por Favor El nombre Jugador 3"><br>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col col-4">
+                            <b><label>Jugador 4: </label></b>
+                        </div>
+                        <div class="col col-4">
+                            <input type="text" name="txtNombre4" class="form-control"
+                                   required="Ingrese Por Favor El nombre Jugador 4"><br>
+                        </div>
+                    </div>
+                    <br>
+                    <center>
+                        <input type="submit" name="Jugar" value="Jugar" class="btn btn-primary">
+                    </center>   
+                </form>
+                </center>
                 </p>
-                <p class="lead">
-                <center><a class="btn btn-primary btn-lg" href="Juego.jsp" role="button">Jugar</a></center>
-                </p>
+
             </div>
 
             <div class="card bg-light">
@@ -65,8 +105,8 @@
                 </div>
             </div>
         </div>
-        
-        
+
+
 
 
     </body>

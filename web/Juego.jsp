@@ -31,41 +31,160 @@
                     </ul>
                 </div>
             </nav>
-            <br><br>   
-            <form action="servletJugadores" method="post">
-                <div class="card text-dark bg-light  mb-3" style="max-width: 18rem;">
-                    <h5 class="card-header bg-primary">DATOS DE JUGADOR</h5>
-                    <div class="card-body">
-                        <img class="card-img-top" src="images/img5.png" alt="Card image cap">
-                        <h5 class="card-title">Datos del Primer Jugador</h5>
-                        <p class="card-text">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Ingrese Nombre</label>
-                            <input type="text" name="txtNombre1"  class="form-control"  
-                                   placeholder="Ingrese Nombre" required>                                    
-                        </div>                               
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Ingrese Valor aportar: </label>
-                            <input type="number" name="txtVr1"  class="form-control"  
-                                   placeholder="Ingrese Valor apostar" required>                                    
-                        </div>                               
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Ingrese Numero que va aportar</label>
-                            <input type="number" name="txtNum1"  class="form-control"   
-                                   placeholder="Ingrese Numero apostar" required>                                    
-                        </div>
+            <br>
+            <form method="post" action="servletJugadores">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card text-dark bg-light  mb-8" style="max-width: 24rem;">
+                            <h5 class="card-header card text-white bg-dark ">DATOS DE JUGADOR #1</h5>
+                            <div class="card-body">
+                                <img class="card-img-top" src="images/img10.png" alt="Card image cap">
+                                <!--<h5 class="card-title">Datos del Primer Jugador</h5>-->
+                                <p class="card-text">
 
-                        </p>
-                        <center><input type="submit" name="btnEnviar" value="Iniciar" 
-                                       class="btn btn-primary"></center>
+                                <div class="form-group">
+                                    <% String jugador1 = request.getParameter("txtNombre1"); %>
+                                    <b><label for="exampleInputEmail1"><%=jugador1%></label></b>
+                                    <input type="hidden" name="txtNombre1"  class="form-control"
+                                           value="<%=jugador1%>">                                    
+                                </div>                               
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Saldo($): </label></b>
+                                    <input type="number" name="txtSaldo1"  class="form-control"  
+                                           value="10000" readonly="readonly">                                    
+                                </div>                               
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Numero a Aportar</label></b>
+                                    <input type="number" name="txtNumero1"  class="form-control"   
+                                           placeholder="Ingrese Numero apostar" >                                    
+                                </div>
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Valor a Apostar: </label></b>
+                                    <input type="number" name="txtValor1"  class="form-control">                                                                               
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card text-dark bg-light  mb-8" style="max-width: 24rem;">
+                            <h5 class="card-header card text-white bg-dark ">DATOS DE JUGADOR #2</h5>
+                            <div class="card-body">
+                                <img class="card-img-top" src="images/img10.png" alt="Card image cap">
+                                <!--<h5 class="card-title">Datos del Primer Jugador</h5>-->
+                                <p class="card-text">
+
+                                <div class="form-group">
+                                    <% String jugador2 = request.getParameter("txtNombre2"); %>
+                                    <b><label for="exampleInputEmail1"><%=jugador2%></label></b>
+                                    <input type="hidden" name="txtNombre2"  class="form-control"
+                                           value="<%=jugador2%>">                                    
+                                </div>                               
+                                <div class="form-group">
+                                    
+                                    <b><label for="exampleInputEmail1">Saldo($): </label></b>
+                                    <input type="number" name="txtSaldo2"  class="form-control"  
+                                           value="10000" readonly="readonly">                                    
+                                </div>                               
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Numero a Apostar: </label></b>
+                                    <input type="number" name="txtNumero2"  class="form-control"   
+                                           placeholder="Ingrese Numero apostar" >                                    
+                                </div>
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Valor a Apostar: </label></b>
+                                    <input type="number" name="txtValor2"  class="form-control">                                                                               
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card text-dark bg-light  mb-8" style="max-width: 24rem;">
+                            <h5 class="card-header card text-white bg-dark ">DATOS DE JUGADOR #3</h5>
+                            <div class="card-body">
+                                <img class="card-img-top" src="images/img10.png" alt="Card image cap">
+                                <!--<h5 class="card-title">Datos del Primer Jugador</h5>-->
+                                <p class="card-text">
+
+                                <div class="form-group">
+                                    <% String jugador3 = request.getParameter("txtNombre3"); %>
+                                    <b><label for="exampleInputEmail1"><%=jugador3 %></label></b>
+                                    <input type="hidden" name="txtNombre3"  class="form-control"  
+                                           value="<%=jugador3 %>" >                                    
+                                </div>                              
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Saldo($): </label></b>
+                                    <input type="number" name="txtSaldo3"  class="form-control"  
+                                           value="10000" readonly="readonly">                                    
+                                </div> 
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Numero a Apostar: </label></b>
+                                    <input type="number" name="txtNumero3"  class="form-control">                                                                               
+                                </div>
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Valor a Aportar</label></b>
+                                    <input type="number" name="txtValor3"  class="form-control">   
+                                                                             
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card text-dark bg-light  mb-8" style="max-width: 24rem;">
+                            <h5 class="card-header card text-white bg-dark ">DATOS DE JUGADOR #4</h5>
+                            <div class="card-body">
+                                <img class="card-img-top" src="images/img10.png" alt="Card image cap">
+                                <!--<h5 class="card-title">Datos del Primer Jugador</h5>-->
+                                <p class="card-text">
+
+                                <div class="form-group">
+                                    <% String jugador4 = request.getParameter("txtNombre4"); %>
+                                    <b><label for="exampleInputEmail1"><%=jugador4 %></label></b>
+                                    <input type="hidden" name="txtNombre4"  class="form-control"  
+                                           value="<%=jugador4 %>"  >                                    
+                                </div>                               
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Saldo($): </label></b>
+                                    <input type="number" name="txtSaldo4"  class="form-control"  
+                                           value="10000" readonly="readonly">                                    
+                                </div>                               
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Numero a Aportar</label></b>
+                                    <input type="number" name="txtNumero4"  class="form-control"   
+                                           placeholder="Ingrese Numero apostar" >                                    
+                                </div>
+                                <div class="form-group">
+                                    <b><label for="exampleInputEmail1">Valor a Apostar: </label></b>
+                                    <input type="number" name="txtValor4"  class="form-control">                                                                               
+                                </div>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-
+                <br>
+                <center>
+                    <input type="submit" name="btnJugar" value="Jugar" class="btn btn-primary">
+                </center>
             </form>
+            <br><br>
+            <div class="card bg-light">
+                <div class="card-body">
+                    <footer >
+                        <p>Desarrollado Por: Daniel Posada calle & Mateo Hincapie</p>
 
+                        <address>
+                            Contactenos: <a href="mailto:danielposada235616@correo.itm.edu.co">danielposada235616@correo.itm.edu.co</a><br>                        
+                        </address> 
 
-
+                    </footer>
+                </div>
+                <div class="card-footer text-white bg-dark">
+                    <h6>Todos Los Derechos Reservados &copy; 2018</h6>
+                </div>
+            </div>
 
 
 
