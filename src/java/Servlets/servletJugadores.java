@@ -88,6 +88,7 @@ public class servletJugadores extends HttpServlet {
             if (saldo1 == 0) {
                 objJ.setNumApostado1(0);
                 objJ.setVrApostado1(0);
+                out.println("<h1>Jugador Eliminado Porque su Saldo actal es de cero(0)</h1>");
             } else {
                 
                 if (vrapuesta1 <= saldo1) {

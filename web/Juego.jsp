@@ -169,25 +169,6 @@
                     <input type="submit" name="btnJugar" value="Jugar" class="btn btn-primary">
                 </center>
             </form>
-            <br><br>
-            <div class="card bg-light">
-                <div class="card-body">
-                    <footer >
-                        <p>Desarrollado Por: Daniel Posada calle & Mateo Hincapie</p>
-
-                        <address>
-                            Contactenos: <a href="mailto:danielposada235616@correo.itm.edu.co">danielposada235616@correo.itm.edu.co</a><br>                        
-                        </address> 
-
-                    </footer>
-                </div>
-                <div class="card-footer text-white bg-dark">
-                    <h6>Todos Los Derechos Reservados &copy; 2018</h6>
-                </div>
-            </div>
-
-
-
         </div>
     </body>
 </html>
