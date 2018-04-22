@@ -43,6 +43,8 @@ public class servletJugadores extends HttpServlet {
             double saldo1, saldo2, saldo3, saldo4, vrapuesta1, vrapuesta2, vrapuesta3, vrapuesta4;
             int num1, num2, num3, num4;
 
+            Jugador objJ = new Jugador();
+                       
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -56,10 +58,9 @@ public class servletJugadores extends HttpServlet {
             out.println("<div class=\"container\">");
             out.println("<center><h1>JUEGO DE RULETA<h1></center>");
 
-            Jugador objJ = new Jugador();
             objJ.Random();
             objJ.getRandom();
-
+            
             //capturamos los nombres de los jugadores
             objJ.setNom1(request.getParameter("txtNombre1"));
             objJ.setNom2(request.getParameter("txtNombre2"));
@@ -234,6 +235,7 @@ public class servletJugadores extends HttpServlet {
                     out.println("<a href=\"index.jsp\" class=\"btn btn-successs\">Jugar de Nuevo</a>");
                     out.println("</div>");
                     out.println("</div>");
+                    
                 }
             }
 
